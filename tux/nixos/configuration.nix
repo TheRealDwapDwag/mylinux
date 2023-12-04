@@ -151,12 +151,9 @@
       displayManager = {
         sddm.enable = false;
       };
-      desktopManager = {
-	plasma5.enable = false;
-      };
     };
     # Enable open ssh, config left as is for setup reasons, not security
-    openssh ={
+    openssh = {
       enable = true;
       settings = {
         PermitRootLogin = "yes";
@@ -207,12 +204,12 @@
       unzip
       wget
       # Cosmic DE
-      # cosmic-applets
-      # cosmic-comp
-      # cosmic-edit
-      # cosmic-greeter
-      # cosmic-icons
-      # cosmic-panel
+        # cosmic-applets
+        # cosmic-comp
+        # cosmic-edit
+        # cosmic-greeter
+        # cosmic-icons
+        # cosmic-panel
       # Development
       cargo
       git
