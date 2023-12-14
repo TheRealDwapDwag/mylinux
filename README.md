@@ -10,7 +10,8 @@ Check out Vimjoyer on YT for any help regarding NixOS.
 Note to self: run 'sudo nix flake update' to update flake.nix and their flake.lock file for upgrading systems.
 
 ~~My flake.nix in ~/tux are impure since they reference ~/.config/home-manager. 
-If using my config (for whatever reason) add an --impure at the end of the rebuild, e.g. 'sudo nixos-rebuild switch --flake ~/tux --impure'~~ Not anymore! doesn't have to be 'tux' either if you change it in the flake. Just a simple 'sudo nixos-rebuild switch --flake ~/$HOSTNAME' where replacing '$HOSTNAME' will work, eventually. I hope. No longer impure so its pure evaluation now.
+If using my config (for whatever reason) add an --impure at the end of the rebuild, e.g. 'sudo nixos-rebuild switch --flake ~/tux --impure'~~ 
+Not anymore! doesn't have to be 'tux' either if you change it in the flake. Just a simple 'sudo nixos-rebuild switch --flake ~/$HOSTNAME' where replacing '$HOSTNAME' will work, eventually. I hope. No longer impure so its pure evaluation now.
 
 Added 'some' modularity.
 
