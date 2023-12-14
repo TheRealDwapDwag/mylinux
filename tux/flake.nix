@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-unstable";
-      # url = "github:nixos/nixpkgs/nixos-23.05"
+      # url = "github:nixos/nixpkgs/nixos-23.11"
     };
 
     home-manager = {
@@ -16,7 +16,10 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    
+    # flatpaks.url = "github:GermanBread/declarative-flatpak/stable";
+    # Please DO NOT override the "nixpkgs" input!
+    # Overriding "nixpkgs" is unsupported unless stated otherwise.
   };
 
   outputs = { 
@@ -27,7 +30,7 @@
   let 
   inherit (self) outputs;
     system = [
-    # "aarch65-linux"
+    # "aarch64-linux"
     "x86_64-linux"
     ];
     # This is a function that generates an attribute by calling a function you
@@ -52,8 +55,8 @@
       tux = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs system;};
         modules = [
-          # > Our main nixos configuration file <
-          ./nixos/configuration.nix
+          # > Our main nixos configuration file < 
+          ./nixos/hosts/default/configuration.nix
         ];
       };
     }; 
