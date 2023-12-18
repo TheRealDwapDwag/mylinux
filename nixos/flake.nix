@@ -53,11 +53,18 @@
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       # FIXME replace with your hostname
-      tux = nixpkgs.lib.nixosSystem {
+      tower = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs system;};
         modules = [
           # > Our main nixos configuration file < 
-          ./nixos/hosts/default/configuration.nix
+          ./nixos/hosts/tower/configuration.nix
+        ];
+      };
+      macBook = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs system;};
+        modules = [
+          # > Our main nixos configuration file < 
+          ./nixos/hosts/macBook/configuration.nix
         ];
       };
     };
